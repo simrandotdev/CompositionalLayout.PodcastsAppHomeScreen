@@ -76,7 +76,15 @@ class ViewController: UIViewController {
                                                            count: 1)
         
         let podcastSection = NSCollectionLayoutSection(group: podcastGroup)
-
+        
+        
+        
+        // Header
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        podcastSection.boundarySupplementaryItems = [header]
+        categoriesSection.boundarySupplementaryItems = [header]
+        recentlyPlayedEpisodeSection.boundarySupplementaryItems = [header]
         
         let layout = UICollectionViewCompositionalLayout { index, environment in
             
