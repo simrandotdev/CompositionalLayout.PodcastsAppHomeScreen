@@ -9,9 +9,25 @@ import Foundation
 
 // MARK: - Welcome
 struct APIResponse: Codable {
-    let recentlyPlayedEpisodes: [RecentlyPlayedEpisode]
-    let categories: [String]
-    let topPodcasts, recentlyVisitedPodcasts: [Podcast]
+    
+    var recentlyPlayedEpisodes: [RecentlyPlayedEpisode] = []
+    var categories: [String] = []
+    var topPodcasts: [Podcast] = []
+    var recentlyVisitedPodcasts: [Podcast] = []
+    
+    init(recentlyPlayedEpisodes: [RecentlyPlayedEpisode], categories: [String], topPodcasts: [Podcast], recentlyVisitedPodcasts: [Podcast]) {
+        self.recentlyPlayedEpisodes = recentlyPlayedEpisodes
+        self.categories = categories
+        self.topPodcasts = topPodcasts
+        self.recentlyVisitedPodcasts = recentlyVisitedPodcasts
+    }
+    
+    init() {
+        self.recentlyPlayedEpisodes = []
+        self.categories = []
+        self.topPodcasts = []
+        self.recentlyVisitedPodcasts = []
+    }
 }
 
 
